@@ -1,0 +1,61 @@
+<html>
+<title>W3.CSS Navigation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<body>
+    <img src="banner.jpg" width="100%" height="30%">
+    <div class="w3-bar w3-dark-gray">
+        <button class="w3-bar-item w3-button tablink" onclick="openmenu(event, 'Home')">Home</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openmenu(event, 'Profile')">Profile</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openmenu(event, 'Aurora')">Aurora</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openmenu(event, 'Bunga')">Bunga</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openmenu(event, 'Gunung')">Gunung</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openmenu(event, 'Puncak')">Puncak</button>
+    </div>
+    <div class="w3-center">
+        <div id="Home" class="menu w3-container" style="display:none">
+            <h1>Belajar HTML dan CSS</h1>
+            <h2>Mata Kulih Pemrograman Web 1</h2>
+            <h3>Unversitas Komputer Indonesia</h3>
+        </div>
+        <div id="Profile" class="menu w3-container" style="display:none">
+            <h2>Profile</h2>
+            <h3> 
+                NIM : 10121119 <br>
+                Nama : Ryan Syach Dwi Putra <br>
+                Kelas : IF 3
+            </h3>
+        </div>
+        <div id="Aurora" class="menu w3-container w3-animate-fading" style="display:none">
+            <h2>Aurora</h2>
+            <img src="aurora.jpg">
+        </div>
+        <div id="Bunga" class="menu w3-container w3-animate-bottom" style="display:none">
+            <h2>Bunga</h2>
+            <img src="flower.jpg">
+        </div>
+        <div id="Gunung" class="menu w3-container w3-animate-top" style="display:none">
+            <h2>Gunung</h2>
+            <img src="mountain.jpg">
+        </div>
+        <div id="Puncak" class="menu w3-container w3-animate-zoom" style="display:none">
+            <h2>Puncak</h2>
+            <img src="snowtop.jpg">
+        </div>
+    </div>
+    <script>
+       function openmenu(evt, namamenu) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+        }
+        document.getElementById(namamenu).style.display = "block";
+        evt.currentTarget.className += " w3-blue";
+        }
+    </script>
+</body>
